@@ -5,59 +5,56 @@
  */
 package memory;
 
-import java.awt.Button;
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.Date;
 
 /**
  *
  * @author Laiman
  */
+
 public class Card extends Button{
-   private final Color frontColor = Color.gray;
+   private final Color frontColor = Color.black;
    private Color backColor = generateRandomColor();
    private boolean isMatched = false;
    private ArrayList<ICardListener> clickListeners = new ArrayList<>();
    
    
-   public Card(String label){
+   Card(String label){
         super(label);
         this.setBackground(frontColor);
-       
-        addMouseListener(new MouseAdapter(){
-                    @Override
-                    public void mouseClicked(MouseEvent e){
-                        if(isMatched == false){
-                            for(ICardListener clickListener: clickListeners){
-                                try {
-                                    clickListener.cardClicked((Card)e.getSource());
-                                } catch (IOException e1) {
-                                    e1.printStackTrace();
-                                }
-                            }
+
+        this.addMouseListener( new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked( e );
+                if(!isMatched){
+                    for(ICardListener clickListener: clickListeners){
+                        try {
+                            clickListener.cardClicked((Card)e.getSource());
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
                         }
                     }
-                });
+                }
+            }
+        } );
     }
    
    private Color generateRandomColor(){
        Random rand = new Random();
-       
+
        float r = rand.nextFloat();
        float g = rand.nextFloat();
        float b = rand.nextFloat();
-       
-       Color randomColor = new Color(r, g, b);
-       return randomColor;
+
+       return new Color(r, g, b);
    }
-   
+
    public Color getCardColor(){
         return backColor;
    }
@@ -72,14 +69,6 @@ public class Card extends Button{
    
    public void setMatched(boolean matchOrNot){
        isMatched = matchOrNot;
-   }
-   
-   public boolean getMatched(){
-       return isMatched;
-   }
-   
-   public boolean isFilped(){
-       return (this.getBackground().equals(this.getCardColor()));
    }
    
    public void addCardClickedListener(ICardListener listener){
