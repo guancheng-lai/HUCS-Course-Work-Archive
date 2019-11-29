@@ -3,84 +3,114 @@
 //  COMP 425 Project2
 //
 //  Created by Guancheng Lai on 10/10/18.
-//  Copyright © 2018 Guancheng Lai. All rights reserved.
+//  Copyright � 2018 Guancheng Lai. All rights reserved.
 //
 
 #include <iostream>
 #include <vector>
-#include <math.h>
-#include <iomanip>
-#include <fstream>
 #include <limits>
 #include <omp.h>
+#include <chrono>
 
 using std::cin;
 using std::endl;
 using std::cout;
 using std::vector;
 
-void printSheet(const vector< vector<int> > &timeSheet)
+double minOf(double a, double b)
 {
-    size_t numOfPoints = timeSheet[0].size();
-    
-    for (int i = 0; i < numOfPoints; i++)
-    {
-        for (int j = 0; j < numOfPoints; j++)
-        {
-            cout << std::setw(7) << timeSheet[i][j];
-        }
-        cout << endl;
-    }
-    
-    cout << endl;
+	return a < b ? a : b;
 }
 
-int minOf (int a, int b)
+void allPairAlgorithm(vector<vector<double> > &timeSheet, int numOfLocations)
 {
-    return a < b ? a : b;
+	for (int middle = 0; middle < numOfLocations; ++middle) {
+		double * middleDistance = timeSheet[middle].data();
+		for (int start = 0; start < numOfLocations; ++start) {
+			double * startDistance = timeSheet[start].data();
+			for (int destination = 0; destination < numOfLocations; ++destination) {
+				timeSheet[start][destination] = minOf(startDistance[destination], startDistance[middle] + middleDistance[destination]);		
+			}
+		}
+	}
+}
+
+void calculateResult(int numOfRoutes, vector<vector<int> > &listOfRoutes, const vector<vector<double> > &timeSheet)
+{
+	double minimunWeight(std::numeric_limits<double>::max());
+    
+	vector<double> results(numOfRoutes);
+    
+	for (int i = 0; i < numOfRoutes; ++i) {
+		int numOfPointsToVisit;
+		cin >> numOfPointsToVisit;
+
+		listOfRoutes[i].resize(numOfPointsToVisit);
+
+		if (numOfPointsToVisit > 1) {
+			for (int j = 0; j < numOfPointsToVisit; ++j) {
+				cin >> listOfRoutes[i][j];
+			}
+		}
+
+		double totalWeight(0);
+
+#pragma omp parallel for reduction (+ : totalWeight)
+		for (int j = 1; j < numOfPointsToVisit; ++j) {
+			int from = listOfRoutes[i][j - 1];
+			int to = listOfRoutes[i][j];
+			double singleWeight = timeSheet[from][to];
+			totalWeight += singleWeight;
+		}
+
+		if (totalWeight < minimunWeight) {
+			minimunWeight = totalWeight;
+		}
+
+		results[i] = totalWeight;
+	}
+
+	for (int i = 0; i < numOfRoutes; i++) {
+		cout << results[i] << endl;
+	}
+
+	cout << minimunWeight << endl;
+}
+
+void getMapData(int numOfLocations, vector<vector<double> > &timeSheet)
+{
+	if (numOfLocations > 0) {
+		int numOfPaths;
+		cin >> numOfPaths;
+
+		for (int i = 0; i < numOfPaths; ++i) {
+			int from, to, weight;
+			cin >> from >> to >> weight;
+			timeSheet[from][to] = weight;
+		}
+	}
 }
 
 int main(int argc, const char * argv[])
 {
-    std::ifstream fin("in.txt");
-    
-    int numOfLocations;
-    fin >> numOfLocations;
-    while (numOfLocations)
-    {
-        vector< vector<int> > timeSheet(numOfLocations, vector<int>(numOfLocations, 9999));
-        
-        for (int i = 0; i < numOfLocations; i++)
-        {
-            timeSheet[i][i] = 0;
-        }
-        
-        int numOfPaths;
-        fin >> numOfPaths;
-        
-        for (int i = 0; i < numOfPaths; i++)
-        {
-            int from, to, weight;
-            fin >> from >> to >> weight;
-            timeSheet[from][to] = weight;
-        }
-        
-        printSheet(timeSheet);
-        
-        for (int k = 0; k < numOfLocations; k++)
-        {
-            for (int i = 0; i < numOfLocations; i++)
-            {
-                for (int j = 0; j < numOfLocations; j++)
-                {
-                    timeSheet[i][j] = minOf(timeSheet[i][j], timeSheet[i][k] + timeSheet[k][j]);
-                }
-            }
-        }
-        
-        printSheet(timeSheet);
-        
-        cin >> numOfLocations;
-    }
-    
+	int numOfLocations;
+	cin >> numOfLocations;
+	
+	vector<vector<double> > timeSheet(numOfLocations, vector<double>(numOfLocations, std::numeric_limits<double>::max()));
+
+#pragma omp parallel for
+	for (int i = 0; i < numOfLocations; ++i) {
+		timeSheet[i][i] = 0.0;
+	}
+	
+	getMapData(numOfLocations, timeSheet);
+	allPairAlgorithm(timeSheet, numOfLocations);
+
+	int numOfRoutes;
+	cin >> numOfRoutes;
+	vector<vector<int> > listOfRoute(numOfRoutes);
+
+	if (numOfLocations > 0 && numOfRoutes > 0) {
+		calculateResult(numOfRoutes, listOfRoute, timeSheet);
+	}
 }
