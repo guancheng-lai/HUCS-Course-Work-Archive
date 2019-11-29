@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FD3D04B219DFEB800E1A172 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D04A219DFEB800E1A172 /* main.cpp */; };
+		4FD3D065219DFF2500E1A172 /* mime_types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D053219DFF2400E1A172 /* mime_types.cpp */; };
+		4FD3D066219DFF2500E1A172 /* request_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D054219DFF2400E1A172 /* request_parser.cpp */; };
+		4FD3D067219DFF2500E1A172 /* reply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D058219DFF2400E1A172 /* reply.cpp */; };
+		4FD3D068219DFF2500E1A172 /* request_dispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D05B219DFF2500E1A172 /* request_dispatcher.cpp */; };
+		4FD3D069219DFF2500E1A172 /* connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D05D219DFF2500E1A172 /* connection.cpp */; };
+		4FD3D06A219DFF2500E1A172 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D05E219DFF2500E1A172 /* server.cpp */; };
+		4FD3D06B219DFF2500E1A172 /* spell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D05F219DFF2500E1A172 /* spell.cpp */; };
+		4FD3D06C219DFF2500E1A172 /* connection_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3D062219DFF2500E1A172 /* connection_manager.cpp */; };
+		4FD3D06F219E003F00E1A172 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD3D06E219E003F00E1A172 /* libboost_system.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FD3D045219DFEB800E1A172 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4F006895226F9B470075B2D2 /* thread_safe_map.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = thread_safe_map.hpp; sourceTree = "<group>"; };
+		4F08558421CB451200D9CB14 /* thread_safe_queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = thread_safe_queue.hpp; sourceTree = "<group>"; };
+		4FD3D047219DFEB800E1A172 /* Multi-Thread Spell Check Server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Multi-Thread Spell Check Server"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD3D04A219DFEB800E1A172 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4FD3D051219DFF2400E1A172 /* server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = server.hpp; sourceTree = "<group>"; };
+		4FD3D052219DFF2400E1A172 /* reply.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = reply.hpp; sourceTree = "<group>"; };
+		4FD3D053219DFF2400E1A172 /* mime_types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mime_types.cpp; sourceTree = "<group>"; };
+		4FD3D054219DFF2400E1A172 /* request_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = request_parser.cpp; sourceTree = "<group>"; };
+		4FD3D055219DFF2400E1A172 /* LICENSE_1_0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_1_0.txt; sourceTree = "<group>"; };
+		4FD3D056219DFF2400E1A172 /* request_dispatcher.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = request_dispatcher.hpp; sourceTree = "<group>"; };
+		4FD3D057219DFF2400E1A172 /* connection.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = connection.hpp; sourceTree = "<group>"; };
+		4FD3D058219DFF2400E1A172 /* reply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = reply.cpp; sourceTree = "<group>"; };
+		4FD3D059219DFF2400E1A172 /* wordlist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordlist.txt; sourceTree = "<group>"; };
+		4FD3D05A219DFF2400E1A172 /* request_handler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = request_handler.hpp; sourceTree = "<group>"; };
+		4FD3D05B219DFF2500E1A172 /* request_dispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = request_dispatcher.cpp; sourceTree = "<group>"; };
+		4FD3D05C219DFF2500E1A172 /* request.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = request.hpp; sourceTree = "<group>"; };
+		4FD3D05D219DFF2500E1A172 /* connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connection.cpp; sourceTree = "<group>"; };
+		4FD3D05E219DFF2500E1A172 /* server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server.cpp; sourceTree = "<group>"; };
+		4FD3D05F219DFF2500E1A172 /* spell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = spell.cpp; sourceTree = "<group>"; };
+		4FD3D060219DFF2500E1A172 /* connection_manager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = connection_manager.hpp; sourceTree = "<group>"; };
+		4FD3D061219DFF2500E1A172 /* request_parser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = request_parser.hpp; sourceTree = "<group>"; };
+		4FD3D062219DFF2500E1A172 /* connection_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = connection_manager.cpp; sourceTree = "<group>"; };
+		4FD3D063219DFF2500E1A172 /* spell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = spell.hpp; sourceTree = "<group>"; };
+		4FD3D064219DFF2500E1A172 /* mime_types.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = mime_types.hpp; sourceTree = "<group>"; };
+		4FD3D06E219E003F00E1A172 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../usr/local/Cellar/boost/1.68.0/lib/libboost_system.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FD3D044219DFEB800E1A172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD3D06F219E003F00E1A172 /* libboost_system.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FD3D03E219DFEB800E1A172 = {
+			isa = PBXGroup;
+			children = (
+				4FD3D049219DFEB800E1A172 /* Multi-Thread Spell Check Server */,
+				4FD3D048219DFEB800E1A172 /* Products */,
+				4FD3D06D219E003F00E1A172 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4FD3D048219DFEB800E1A172 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FD3D047219DFEB800E1A172 /* Multi-Thread Spell Check Server */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FD3D049219DFEB800E1A172 /* Multi-Thread Spell Check Server */ = {
+			isa = PBXGroup;
+			children = (
+				4FD3D062219DFF2500E1A172 /* connection_manager.cpp */,
+				4FD3D060219DFF2500E1A172 /* connection_manager.hpp */,
+				4F08558421CB451200D9CB14 /* thread_safe_queue.hpp */,
+				4F006895226F9B470075B2D2 /* thread_safe_map.hpp */,
+				4FD3D05D219DFF2500E1A172 /* connection.cpp */,
+				4FD3D057219DFF2400E1A172 /* connection.hpp */,
+				4FD3D055219DFF2400E1A172 /* LICENSE_1_0.txt */,
+				4FD3D053219DFF2400E1A172 /* mime_types.cpp */,
+				4FD3D064219DFF2500E1A172 /* mime_types.hpp */,
+				4FD3D058219DFF2400E1A172 /* reply.cpp */,
+				4FD3D052219DFF2400E1A172 /* reply.hpp */,
+				4FD3D05B219DFF2500E1A172 /* request_dispatcher.cpp */,
+				4FD3D056219DFF2400E1A172 /* request_dispatcher.hpp */,
+				4FD3D05A219DFF2400E1A172 /* request_handler.hpp */,
+				4FD3D054219DFF2400E1A172 /* request_parser.cpp */,
+				4FD3D061219DFF2500E1A172 /* request_parser.hpp */,
+				4FD3D05C219DFF2500E1A172 /* request.hpp */,
+				4FD3D05E219DFF2500E1A172 /* server.cpp */,
+				4FD3D051219DFF2400E1A172 /* server.hpp */,
+				4FD3D05F219DFF2500E1A172 /* spell.cpp */,
+				4FD3D063219DFF2500E1A172 /* spell.hpp */,
+				4FD3D059219DFF2400E1A172 /* wordlist.txt */,
+				4FD3D04A219DFEB800E1A172 /* main.cpp */,
+			);
+			path = "Multi-Thread Spell Check Server";
+			sourceTree = "<group>";
+		};
+		4FD3D06D219E003F00E1A172 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FD3D06E219E003F00E1A172 /* libboost_system.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FD3D046219DFEB800E1A172 /* Multi-Thread Spell Check Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FD3D04E219DFEB800E1A172 /* Build configuration list for PBXNativeTarget "Multi-Thread Spell Check Server" */;
+			buildPhases = (
+				4FD3D043219DFEB800E1A172 /* Sources */,
+				4FD3D044219DFEB800E1A172 /* Frameworks */,
+				4FD3D045219DFEB800E1A172 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Multi-Thread Spell Check Server";
+			productName = "Multi-Thread Spell Check Server";
+			productReference = 4FD3D047219DFEB800E1A172 /* Multi-Thread Spell Check Server */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FD3D03F219DFEB800E1A172 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Guancheng Lai";
+				TargetAttributes = {
+					4FD3D046219DFEB800E1A172 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 4FD3D042219DFEB800E1A172 /* Build configuration list for PBXProject "Multi-Thread Spell Check Server" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4FD3D03E219DFEB800E1A172;
+			productRefGroup = 4FD3D048219DFEB800E1A172 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FD3D046219DFEB800E1A172 /* Multi-Thread Spell Check Server */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FD3D043219DFEB800E1A172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD3D04B219DFEB800E1A172 /* main.cpp in Sources */,
+				4FD3D065219DFF2500E1A172 /* mime_types.cpp in Sources */,
+				4FD3D06B219DFF2500E1A172 /* spell.cpp in Sources */,
+				4FD3D067219DFF2500E1A172 /* reply.cpp in Sources */,
+				4FD3D06C219DFF2500E1A172 /* connection_manager.cpp in Sources */,
+				4FD3D068219DFF2500E1A172 /* request_dispatcher.cpp in Sources */,
+				4FD3D066219DFF2500E1A172 /* request_parser.cpp in Sources */,
+				4FD3D06A219DFF2500E1A172 /* server.cpp in Sources */,
+				4FD3D069219DFF2500E1A172 /* connection.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4FD3D04C219DFEB800E1A172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4FD3D04D219DFEB800E1A172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4FD3D04F219DFEB800E1A172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/boost/1.68.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4FD3D050219DFEB800E1A172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/boost/1.68.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FD3D042219DFEB800E1A172 /* Build configuration list for PBXProject "Multi-Thread Spell Check Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FD3D04C219DFEB800E1A172 /* Debug */,
+				4FD3D04D219DFEB800E1A172 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FD3D04E219DFEB800E1A172 /* Build configuration list for PBXNativeTarget "Multi-Thread Spell Check Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FD3D04F219DFEB800E1A172 /* Debug */,
+				4FD3D050219DFEB800E1A172 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FD3D03F219DFEB800E1A172 /* Project object */;
+}
